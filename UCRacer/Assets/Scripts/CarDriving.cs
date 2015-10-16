@@ -24,11 +24,11 @@ public class CarDriving : MonoBehaviour {
 			GetComponent<Rigidbody>().AddRelativeForce (new Vector3 (Input.GetAxis ("Vertical"), 0.0f, 0)  * speed);
 
 		}
-		if (Input.GetKey (KeyCode.A))
+		if (Input.GetKey (KeyCode.A) && speed>0)
 		{
 			transform.Rotate (new Vector3 (0, -1, 0) );
 		}
-		if (Input.GetKey (KeyCode.D))
+		if (Input.GetKey (KeyCode.D) && speed>0)
 		{
 			transform.Rotate (new Vector3 (0, 1, 0) );;
 		}
