@@ -14,12 +14,15 @@ public class CarDriving : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey (KeyCode.W))
 		{
-			GetComponent<Rigidbody>().AddRelativeForce (Vector3.forward * Input.GetAxis ("Vertical") * (speed));
-			
+			//GetComponent<Rigidbody>().AddForce (Vector3.forward * Input.GetAxis ("Horizontal") * (speed));
+			GetComponent<Rigidbody>().AddRelativeForce (new Vector3 (Input.GetAxis ("Vertical"), 0.0f, 0) * speed);
+
 		}
 		if (Input.GetKey (KeyCode.S))
 		{
-			GetComponent<Rigidbody>().AddRelativeForce ( Vector3.back * Input.GetAxis ("Vertical") * (-1) * (speed));
+			//GetComponent<Rigidbody>().AddRelativeForce ( Vector3.back * Input.GetAxis ("Horizontal") * (-1) * (speed));
+			GetComponent<Rigidbody>().AddRelativeForce (new Vector3 (Input.GetAxis ("Vertical"), 0.0f, 0)  * speed);
+
 		}
 		if (Input.GetKey (KeyCode.A))
 		{

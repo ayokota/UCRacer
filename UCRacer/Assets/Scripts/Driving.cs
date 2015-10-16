@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Driving : MonoBehaviour {
 	
-	float speed = 1;
+	float speed = 20f;
 	
 	// Use this for initialization
 	void Start () {
@@ -14,12 +14,12 @@ public class Driving : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey (KeyCode.W))
 		{
-			GetComponent<Rigidbody>().AddRelativeForce (Vector3.forward * Input.GetAxis ("Vertical") * (speed));
-			
+			GetComponent<Rigidbody>().AddRelativeForce (Vector3.forward * Input.GetAxis ("Horizontal") * (speed));
+			//GetComponent<Rigidbody>().AddForce (new Vector3 (Input.GetAxis ("Horizontal"), 0.0f, 0) * speed)
 		}
 		if (Input.GetKey (KeyCode.S))
 		{
-			GetComponent<Rigidbody>().AddRelativeForce ( Vector3.back * Input.GetAxis ("Vertical") * (-1) * (speed));
+			GetComponent<Rigidbody>().AddRelativeForce ( Vector3.back * Input.GetAxis ("Horizontal") * (-1) * (speed));
 		}
 		if (Input.GetKey (KeyCode.A))
 		{
