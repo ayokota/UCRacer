@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\CarDriving.cs" />
      <Compile Include="Assets\Scripts\Driving.cs" />
      <Compile Include="Assets\Scripts\VincentCarDriving.cs" />
+     <Compile Include="Assets\Scripts\breakLight.cs" />
      <Compile Include="Assets\Scripts\cameraController.cs" />
      <Compile Include="Assets\Scripts\wheelSpinning.cs" />
  <Reference Include="UnityEngine.Networking">

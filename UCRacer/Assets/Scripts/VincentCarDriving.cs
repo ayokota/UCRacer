@@ -5,6 +5,8 @@ public class VincentCarDriving : MonoBehaviour {
 	
 	public float accel;
 	public float steer;
+	public float brake;
+
 	public WheelCollider FrontRight;
 	public WheelCollider FrontLeft;
 	public WheelCollider BackRight;
@@ -25,5 +27,14 @@ public class VincentCarDriving : MonoBehaviour {
 
 		FrontRight.steerAngle = hori;
 		FrontLeft.steerAngle = hori;
+
+		if(Input.GetKey(KeyCode.Space) ) {
+			BackRight.brakeTorque = brake;
+			BackLeft.brakeTorque = brake;
+		}
+		else {
+			BackRight.brakeTorque = 0;
+			BackLeft.brakeTorque = 0;
+		}
 	}
 }
