@@ -15,8 +15,11 @@ public class wheelSpinning : MonoBehaviour {
 		    (Mathf.Abs(transform.position.x - currentPosition.x) > 0.01)||
 		    (Mathf.Abs(transform.position.y - currentPosition.y) > 0.01))
 		{
-			if ((transform.position.z < currentPosition.z) ||
-			    transform.position.x > currentPosition.x)
+			if (transform.position.z < currentPosition.z) 
+				transform.Rotate (new Vector3 (0, 5, 0) );
+			else
+				transform.Rotate (new Vector3 (0, -5, 0) );
+			if (transform.position.x < currentPosition.x) 
 				transform.Rotate (new Vector3 (0, 5, 0) );
 			else
 				transform.Rotate (new Vector3 (0, -5, 0) );
