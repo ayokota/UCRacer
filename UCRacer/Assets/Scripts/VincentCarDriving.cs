@@ -19,15 +19,6 @@ public class VincentCarDriving : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float vert = Input.GetAxis ("Vertical") * accel;
-		float hori = Input.GetAxis ("Horizontal") * steer;
-
-		BackRight.motorTorque = vert;
-		BackLeft.motorTorque = vert;
-
-		FrontRight.steerAngle = hori;
-		FrontLeft.steerAngle = hori;
-
 		if(Input.GetKey(KeyCode.Space) ) {
 			BackRight.brakeTorque = brake;
 			BackLeft.brakeTorque = brake;
@@ -35,6 +26,14 @@ public class VincentCarDriving : MonoBehaviour {
 		else {
 			BackRight.brakeTorque = 0;
 			BackLeft.brakeTorque = 0;
+			float vert = Input.GetAxis ("Vertical") * accel;
+			float hori = Input.GetAxis ("Horizontal") * steer;
+			
+			BackRight.motorTorque = vert;
+			BackLeft.motorTorque = vert;
+			
+			FrontRight.steerAngle = hori;
+			FrontLeft.steerAngle = hori;
 		}
 	}
 }

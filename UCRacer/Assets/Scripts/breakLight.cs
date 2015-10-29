@@ -11,7 +11,7 @@ public class breakLight : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.Space)) {
+		if (Input.GetKey (KeyCode.Space) || Input.GetKey (KeyCode.S)) {
 			lt.intensity = 7;
 		} else {
 			lt.intensity = 1;
