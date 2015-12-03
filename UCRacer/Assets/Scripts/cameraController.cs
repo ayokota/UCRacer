@@ -3,10 +3,11 @@ using System.Collections;
 
 public class cameraController : MonoBehaviour {
 
-	public GameObject cameraLocation;
+	private GameObject cameraLocation;
 	
 	// Use this for initialization
 	void Start () {
+		cameraLocation = GameObject.FindGameObjectWithTag ("cameralocation");
 	}
 	
 	// Update is called once per frame
