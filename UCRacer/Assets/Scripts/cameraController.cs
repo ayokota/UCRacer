@@ -11,7 +11,12 @@ public class cameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
-		transform.position = cameraLocation.transform.position;
-		transform.rotation = cameraLocation.transform.rotation;
+		Vector3 velocity = Vector3.zero;
+		Vector3 forward = cameraLocation.transform.forward * 5.0f;
+		Vector3 needPos = cameraLocation.transform.position - forward;
+		needPos.y = 3.0f;
+		transform.position = Vector3.SmoothDamp(transform.position, needPos,
+		                                        ref velocity,0.06f);
+		transform.LookAt (cameraLocation.transform);
 	}
 }
