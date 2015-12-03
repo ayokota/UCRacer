@@ -8,6 +8,8 @@ public class Timer : MonoBehaviour {
 	private float bestTime;
 	private int currentLap;
 
+	private int AICurrentLap;
+
 
 	// Use this for initialization
 	void Start () {
@@ -33,8 +35,13 @@ public class Timer : MonoBehaviour {
 			started = true;
 			if(currentLap+1 > 3){
 				//TODO Game over?
+				loadscene ();
 			}
 			currentLap += 1;
+		}
+
+		if (other.tag == "AI") {
+
 		}
 	}
 
@@ -57,9 +64,10 @@ public class Timer : MonoBehaviour {
 		style = new GUIStyle();
 		style.fontSize = 20;
 		GUI.Label ( new Rect (Screen.width/2 - 50, 60, 200, 200), "best: " + niceTime, style);
+	}
 
-
-
-
+	public void loadscene()
+	{
+		Application.LoadLevel("End Scene"); // replace with name of any other scene
 	}
 }
