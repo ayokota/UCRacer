@@ -45,10 +45,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ReturnToMainMenu.cs" />
      <Compile Include="Assets\Scripts\CarDriving.cs" />
      <Compile Include="Assets\Scripts\Driving.cs" />
      <Compile Include="Assets\Scripts\FlashBackLight.cs" />
+     <Compile Include="Assets\Scripts\ReturnToMainMenu.cs" />
+     <Compile Include="Assets\Scripts\Storage.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
      <Compile Include="Assets\Scripts\VincentCarDriving.cs" />
      <Compile Include="Assets\Scripts\YunAICarWaypoint.cs" />
@@ -59,7 +60,6 @@
      <Compile Include="Assets\Scripts\login.cs" />
      <Compile Include="Assets\Scripts\quit.cs" />
      <Compile Include="Assets\Scripts\wheelSpinning.cs" />
-     <Compile Include="Assets\Storage.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

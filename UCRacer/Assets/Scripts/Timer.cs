@@ -5,17 +5,15 @@ public class Timer : MonoBehaviour {
 
 	private float elapsedTime;
 	private bool started;
-	private float bestTime;
+	private float bestLapTime;
 	private int currentLap;
-
-	private int AICurrentLap;
 
 
 	// Use this for initialization
 	void Start () {
 		elapsedTime = 0;
 		started = false;
-		bestTime = 0;
+		bestLapTime = 0;
 		currentLap = 0;
 	}
 	
@@ -28,13 +26,15 @@ public class Timer : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Player") {
-			if (bestTime == 0 || elapsedTime < bestTime) {
-				bestTime = elapsedTime;
+			if (bestLapTime == 0 || elapsedTime < bestLapTime) {
+				bestLapTime = elapsedTime;
 			}
 			elapsedTime = 0;
 			started = true;
 			if(currentLap+1 > 3){
 				//TODO Save best time / AI info to storage object
+				Storage stor = GameObject.FindGameObjectWithTag("Storage").GetComponent<Storage>();
+				stor.bestTime = bestLapTime;
 				//load end scene
 				loadscene ();
 			}
@@ -58,8 +58,8 @@ public class Timer : MonoBehaviour {
 		string lap = "Lap " + currentLap + "/3";
 		GUI.Label ( new Rect (50, 20, 200, 200), lap, style);
 
-		int bestMinutes = Mathf.FloorToInt (bestTime / 60F);
-		int bestSeconds = Mathf.FloorToInt (bestTime - bestMinutes * 60);
+		int bestMinutes = Mathf.FloorToInt (bestLapTime / 60F);
+		int bestSeconds = Mathf.FloorToInt (bestLapTime - bestMinutes * 60);
 		niceTime = string.Format ("{00:00}:{1:00}", bestMinutes, bestSeconds);
 		GUI.contentColor = Color.black;
 		style = new GUIStyle();

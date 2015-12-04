@@ -5,6 +5,7 @@ public class Storage : MonoBehaviour {
 
 	public float bestTime = 0.0f;
 	public string username = "";
+	public bool beatAI = true;
 
 	// Use this for initialization
 	void Start () {
