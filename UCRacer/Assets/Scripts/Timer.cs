@@ -34,7 +34,8 @@ public class Timer : MonoBehaviour {
 			elapsedTime = 0;
 			started = true;
 			if(currentLap+1 > 3){
-				//TODO Game over?
+				//TODO Save best time / AI info to storage object
+				//load end scene
 				loadscene ();
 			}
 			currentLap += 1;
