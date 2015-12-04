@@ -35,7 +35,9 @@ $phpHash = "736868697473736563726574"; // same code in here as in your Unity gam
 $nick = anti_injection_login($_POST["myform_nick"]); //I use that function to protect against SQL injection
 //$pass = anti_injection_login_senha($_POST["myform_pass"]); //THIS IS SO BAD NEVER EVER DO THIS
 $tracknum = anti_injection_login($_POST["myform_tracknum"]); // where $tracknum = "hiscore", "hiscore2", or "hiscore3"
-$hiscore = anti_injection_login($_POST["myform_hiscore"]); // mysql TIME format: HH:MM:SS. floating points allowed?
+$hiscore_string = anti_injection_login($_POST["myform_hiscore"]);
+$hiscore = (float) $hiscore_string;
+ // mysql TIME format: HH:MM:SS. floating points allowed?
 /*
 you can also use this:
 $nick = $_POST["myform_nick"];
@@ -64,6 +66,10 @@ if ($unityHash != $phpHash){
 			{
 				echo 'Insert failed: ' . mySQL_error();
 			}
+		}
+		else
+		{
+			echo 'hiscore rejected n00b';
 		}
 	}
 	

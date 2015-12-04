@@ -6,7 +6,9 @@ public class login : MonoBehaviour {
     private string password = "";
     private string loginURL = "http://shinray.webuda.com/check_scores.php"; // login url, ignore the fact it's called 'check_scores'
     private string registerURL = "http://shinray.webuda.com/create_account.php"; // register
-    private string hash = "736868697473736563726574"; //my secret value - also found in the php
+    //private string hash = "736868697473736563726574"; //my secret value - also found in the php
+
+    Storage stor = GameObject.FindGameObjectWithTag("Storage").GetComponent<Storage>();
 
     public void getUser(string usrnm)
     {
@@ -22,7 +24,7 @@ public class login : MonoBehaviour {
     public void userLogin()
     {
         WWWForm form = new WWWForm(); //new form connection
-        form.AddField("myform_hash", hash); // hash check
+        form.AddField("myform_hash", stor.hash); // hash check
         form.AddField("myform_nick", username);
         form.AddField("myform_pass", password);
         WWW www = new WWW(loginURL, form); // send the form to the url
@@ -42,6 +44,7 @@ public class login : MonoBehaviour {
             if (www.text.Contains("LOGADO - PASSWORD CORRECT"))
             {
                 loadscene(); // login successful!
+                stor.username = username; // set current user in storage
                 www.Dispose(); // clears the form ingame
             }
         }
@@ -54,7 +57,7 @@ public class login : MonoBehaviour {
     public void userRegister()
     {
         WWWForm form = new WWWForm(); //new form connection
-        form.AddField("myform_hash", hash); // hash check
+        form.AddField("myform_hash", stor.hash); // hash check
         form.AddField("myform_nick", username);
         form.AddField("myform_pass", password);
         WWW www = new WWW(registerURL, form); // send the form to the url
@@ -74,6 +77,7 @@ public class login : MonoBehaviour {
             if (www.text.Contains("Success!"))
             {
                 //loadscene(); // login successful!
+                Debug.Log("Account successfully created!");
                 www.Dispose(); // clears the form ingame
             }
         }
@@ -85,6 +89,6 @@ public class login : MonoBehaviour {
 
     public void loadscene()
     {
-        Application.LoadLevel("Main Scene"); // replace with name of any other scene
+        Application.LoadLevel("level_select"); // replace with name of any other scene
     }
 }
