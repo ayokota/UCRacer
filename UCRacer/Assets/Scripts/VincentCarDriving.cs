@@ -37,8 +37,14 @@ public class VincentCarDriving : MonoBehaviour {
 			BackLeft.brakeTorque = 0;
 			FrontLeft.brakeTorque = 0;
 			FrontRight.brakeTorque = 0;
+			//PC:
 			float vert = Input.GetAxis ("Vertical") * CurrentTorque;
 			float hori = Input.GetAxis ("Horizontal") * steer;
+			
+			//Android:
+			//float vert = -Input.acceleration.z * CurrentTorque * 0.75f;
+			//float hori = Input.acceleration.x * steer;
+			
 			
 			BackRight.motorTorque = vert;
 			BackLeft.motorTorque = vert;
