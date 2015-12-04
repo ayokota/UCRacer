@@ -1,8 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Timer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EndSceneScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/Timer.cs" Line="35" Column="32" />
+      <File FileName="Assets/Scripts/Timer.cs" Line="56" Column="78" />
+      <File FileName="Assets/Scripts/EndSceneScript.cs" Line="16" Column="3" />
+      <File FileName="../../../Previous classes/CS179/CS179/PirateWars/Assets/Scripts/AmmoNotification.cs" Line="2" Column="1" />
+      <File FileName="Assets/Scripts/Storage.cs" Line="8" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
