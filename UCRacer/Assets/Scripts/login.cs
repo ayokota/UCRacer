@@ -8,7 +8,12 @@ public class login : MonoBehaviour {
     private string registerURL = "http://shinray.webuda.com/create_account.php"; // register
     //private string hash = "736868697473736563726574"; //my secret value - also found in the php
 
-    Storage stor = GameObject.FindGameObjectWithTag("Storage").GetComponent<Storage>();
+    private Storage stor;
+	
+	void Start()
+	{
+		stor = GameObject.FindGameObjectWithTag("Storage").GetComponent<Storage>();
+	}
 
     public void getUser(string usrnm)
     {

@@ -2,7 +2,12 @@
 using System.Collections;
 
 public class level_select : MonoBehaviour {
-    Storage stor = GameObject.FindGameObjectWithTag("Storage").GetComponent<Storage>();
+    private Storage stor;
+	
+	void Start()
+	{
+		stor = GameObject.FindGameObjectWithTag("Storage").GetComponent<Storage>();
+	}
 
 	public void loadlevelOne() //"Main Scene"
     {

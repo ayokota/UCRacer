@@ -8,10 +8,11 @@ public class EndSceneScript : MonoBehaviour {
 	public int Secs;
 
     private string updateURL = "http://shinray.webuda.com/update_scores.php"; // HORRIBLE SECURITY. If anyone finds this they can probably update anyone's hiscores if they have the correct info.
+	private Storage stor;
 
 	// Use this for initialization
 	void Start () {
-		Storage stor = GameObject.FindGameObjectWithTag("Storage").GetComponent<Storage>();
+		stor = GameObject.FindGameObjectWithTag("Storage").GetComponent<Storage>();
 		Text t = GameObject.Find ("BestTime").GetComponent<Text>();
 
 		Mins = Mathf.FloorToInt (stor.bestTime / 60F);
